@@ -51,7 +51,7 @@ $$
 (No formal equation, comparing group means)
 
 $$
-PartnerYes_{Match} \\ vs \\ PartnerYes_{Missed}
+PartnerYes_{Match} \text{ vs } PartnerYes_{Missed}
 $$
 
 ### B. Logistic Regression Predicting Missed Connections
