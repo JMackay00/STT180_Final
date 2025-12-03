@@ -1,0 +1,99 @@
+---
+title: "SpeedDating Research Question Model Equations"
+output:
+  pdf_document: default
+---
+## RQ1 Equations: Interaction of Shared Interests and Sincerity on Attraction
+
+(Multiple Linear Regression)
+
+**Men Rating Women**
+$$
+LikeM = \beta_0 + \beta_1(SharedInterestsM) + \beta_2(SincereM) + \beta_3(SharedInterestsM \times SincereM) + \epsilon 
+$$
+
+**Women Rating Men**
+$$
+LikeF = \beta_0 + \beta_1(SharedInterestsF) + \beta_2(SincereF) + \beta_3(SharedInterestsF \times SincereF) + \epsilon 
+$$
+
+## RQ2 Equations: Does Attractiveness Predict Second-Date Decisions After Controlling for Personality?
+
+(Logistic Regression - Log-Odds Format)
+
+**Men Deciding on Women**
+$$
+log(\frac{P(DecisionM = 1)}{1-P(DecisionM = 1)}) = \beta_0 + \beta_1(AttractiveM) + \beta_2(IntelligentM) + \beta_3(FunM)
+$$
+
+**Women Deciding on Men**
+$$
+log(\frac{P(DecisionF = 1)}{1-P(DecisionF = 1)}) = \beta_0 + \beta_1(AttractiveF) + \beta_2(IntelligentF) + \beta_3(FunF)
+$$
+
+## RQ3 Equations: Which Personality Traits best Predict Romantic Liking?
+
+(Multiple Linear Regression)
+
+**Men Rating Women**
+$$
+LikeM = \beta_0 + \beta_1(FunM) + \beta_2(SincereM) + \beta_3(AmbitiousM) + \beta_4(IntelligentM) + \epsilon
+$$
+
+**Women Rating Men**
+$$
+LikeF = \beta_0 + \beta_1(FunF) + \beta_2(SincereF) + \beta_3(AmbitiousF) + \beta_4(IntelligentF) + \epsilon
+$$
+
+## RQ4 Equations: Missed Connections and Misperceptions
+
+### A. Two-Sample T-Test
+(No formal equation, comparing group means)
+
+$$
+PartnerYes_{Match} \\ vs \\ PartnerYes_{Missed}
+$$
+
+### B. Logistic Regression Predicting Missed Connections
+(Log-Odds Format)
+
+$$
+log(\frac{P(MissedConnection = 1)}{1-P(MissedConnection = 1)}) = \beta_0 + \beta_1(UnderestimateM) + \beta_2(UnderestimateF)
+$$
+
+Where:
+
+$$
+MissedConnection = 1 \rightarrow \text{both } Like \ge 7 \text{ but not a mutual match}
+$$
+
+$$
+MissedConnection = 0 \rightarrow \text{both } Like \ge 7 \text{ and a mutual match}
+$$
+
+### C. Hypothetical "Perfect Information" Matching
+(Deterministic, not a statistical model)
+
+$$
+HypDecisionM =
+\begin{cases}
+1, & \text{if } LikeM \ge 7 \\
+0, & \text{if } LikeM < 7
+\end{cases}
+$$
+
+$$
+HypDecisionF =
+\begin{cases}
+1, & \text{if } LikeF \ge 7 \\
+0, & \text{if } LikeF < 7
+\end{cases}
+$$
+
+$$
+HypMatch =
+\begin{cases}
+1, & \text{if } HypDecisionM = 1 \text{ and } HypDecisionF = 1 \\
+0, & \text{otherwise}
+\end{cases}
+$$

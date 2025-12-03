@@ -1,0 +1,5 @@
+source("scripts/0_clean_data.R")
+source("scripts/1_rq1_analysis.R")
+source("scripts/2_rq2_analysis.R")
+source("scripts/3_rq3_analysis.R")
+source("scripts/4_rq4_analysis.R")
