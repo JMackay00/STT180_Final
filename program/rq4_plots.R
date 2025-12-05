@@ -1,6 +1,6 @@
 library(ggplot2)
 
-# Helper to label 0/1
+# Labeling 0 and 1
 missed_labels <- c("0" = "Match", "1" = "Missed Connection")
 
 # 1. Histograms
@@ -46,7 +46,7 @@ plot_rq4_qq_male_match <- function(mc_data) {
     stat_qq() +
     stat_qq_line() +
     labs(
-      title = "Male PartnerYesM (Match) ??? QQ Plot",
+      title = "Male PartnerYesM (Match) QQ Plot",
       x     = "Theoretical Quantiles",
       y     = "Sample Quantiles"
     ) +
@@ -62,7 +62,7 @@ plot_rq4_qq_male_missed <- function(mc_data) {
     stat_qq() +
     stat_qq_line() +
     labs(
-      title = "Male PartnerYesM (Missed Connection) ??? QQ Plot",
+      title = "Male PartnerYesM (Missed Connection) QQ Plot",
       x     = "Theoretical Quantiles",
       y     = "Sample Quantiles"
     ) +
@@ -78,7 +78,7 @@ plot_rq4_qq_female_match <- function(mc_data) {
     stat_qq() +
     stat_qq_line() +
     labs(
-      title = "Female PartnerYesF (Match) ??? QQ Plot",
+      title = "Female PartnerYesF (Match) QQ Plot",
       x     = "Theoretical Quantiles",
       y     = "Sample Quantiles"
     ) +
@@ -94,7 +94,7 @@ plot_rq4_qq_female_missed <- function(mc_data) {
     stat_qq() +
     stat_qq_line() +
     labs(
-      title = "Female PartnerYesF (Missed Connection) ??? QQ Plot",
+      title = "Female PartnerYesF (Missed Connection) QQ Plot",
       x     = "Theoretical Quantiles",
       y     = "Sample Quantiles"
     ) +

@@ -86,3 +86,50 @@ plot_rq1_qq_resid_female <- function(model) {
     ) +
     theme_minimal()
 }
+
+# 4. Interaction plots
+plot_rq1_interaction_male <- function(data) {
+  
+  data <- data %>%
+    mutate(
+      SincereGroup = case_when(
+        SincereM <= quantile(SincereM, 0.33) ~ "Low Sincerity",
+        SincereM <= quantile(SincereM, 0.66) ~ "Medium Sincerity",
+        TRUE ~ "High Sincerity"
+      )
+    )
+  
+  ggplot(data, aes(x = SharedInterestsM, y = LikeM, color = SincereGroup)) +
+    geom_point(alpha = 0.4) +
+    geom_smooth(method = "lm", se = FALSE) +
+    labs(
+      title = "Interaction: Shared Interests × Sincerity (Male Model)",
+      x     = "Shared Interests (M)",
+      y     = "Liking Score (LikeM)",
+      color = "Sincerity Level"
+    ) +
+    theme_minimal()
+}
+
+plot_rq1_interaction_female <- function(data) {
+  
+  data <- data %>%
+    mutate(
+      SincereGroup = case_when(
+        SincereF <= quantile(SincereM, 0.33) ~ "Low Sincerity",
+        SincereF <= quantile(SincereM, 0.66) ~ "Medium Sincerity",
+        TRUE ~ "High Sincerity"
+      )
+    )
+  
+  ggplot(data, aes(x = SharedInterestsF, y = LikeF, color = SincereGroup)) +
+    geom_point(alpha = 0.4) +
+    geom_smooth(method = "lm", se = FALSE) +
+    labs(
+      title = "Interaction: Shared Interests × Sincerity (Female Model)",
+      x     = "Shared Interests (F)",
+      y     = "Liking Score (LikeF)",
+      color = "Sincerity Level"
+    ) +
+    theme_minimal()
+}

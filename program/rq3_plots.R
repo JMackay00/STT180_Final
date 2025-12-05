@@ -86,3 +86,28 @@ plot_rq3_qq_resid_female <- function(model) {
     ) +
     theme_minimal()
 }
+
+# 4. Scatterplots
+plot_rq3_scatter_fun_male <- function(data) {
+  ggplot(data, aes(x = FunM, y = LikeM)) +
+    geom_point(alpha = 0.4, color = "skyblue") +
+    geom_smooth(method = "lm", se = FALSE, color = "darkblue") +
+    labs(
+      title = "Male: Liking vs Fun Rating",
+      x     = "Fun Rating (FunM)",
+      y     = "Liking (LikeM)"
+    ) +
+    theme_minimal()
+}
+
+plot_rq3_scatter_fun_female <- function(data) {
+  ggplot(data, aes(x = FunF, y = LikeF)) +
+    geom_point(alpha = 0.4, color = "pink") +
+    geom_smooth(method = "lm", se = FALSE, color = "red") +
+    labs(
+      title = "Female: Liking vs Fun Rating",
+      x     = "Fun Rating (FunF)",
+      y     = "Liking (LikeF)"
+    ) +
+    theme_minimal()
+}

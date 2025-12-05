@@ -21,6 +21,10 @@ p_resid_fit_female <- plot_rq3_resid_vs_fitted_female(female_model)
 p_qq_male   <- plot_rq3_qq_resid_male(male_model)
 p_qq_female <- plot_rq3_qq_resid_female(female_model)
 
+# Scatterplots
+p_scatter_fun_male   <- plot_rq3_scatter_fun_male(data)
+p_scatter_fun_female <- plot_rq3_scatter_fun_female(data)
+
 # 5. Save plots
 ggsave("figures/rq3/rq3_hist_like_male.png", p_hist_male, width = 6, height = 4)
 ggsave("figures/rq3/rq3_hist_like_female.png", p_hist_female, width = 6, height = 4)
@@ -28,3 +32,5 @@ ggsave("figures/rq3/rq3_resid_fitted_male.png", p_resid_fit_male, width = 6, hei
 ggsave("figures/rq3/rq3_resid_fitted_female.png", p_resid_fit_female, width = 6, height = 4)
 ggsave("figures/rq3/rq3_qq_resid_male.png", p_qq_male, width = 5, height = 5)
 ggsave("figures/rq3/rq3_qq_resid_female.png", p_qq_female, width = 5, height = 5)
+ggsave("figures/rq3/rq3_scatter_fun_male.png", p_scatter_fun_male, width = 6, height = 4)
+ggsave("figures/rq3/rq3_scatter_fun_female.png", p_scatter_fun_female, width = 6, height = 4)
