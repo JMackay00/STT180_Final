@@ -1,14 +1,6 @@
 library(tidyverse)
 
-# 1. Load cleaned data
-load_clean_data <- function(path = "data_clean/SpeedDatingClean.rds"){
-  if (!file.exists(path)) {
-    stop("Clean data file not found at: ", path)
-  }
-  readRDS(path)
-}
-
-# 2. Add RQ4 variables
+# 1. Add RQ4 variables
 add_rq4_variables <- function(data) {
   data %>%
     mutate(
@@ -26,13 +18,13 @@ add_rq4_variables <- function(data) {
     )
 }
 
-# 3. Filter to match_worthy pairs
+# 2. Filter to match_worthy pairs
 get_matchworthy_data <- function(data_rq4) {
   data_rq4 %>%
     filter(!is.na(MissedConnection))
 }
 
-# 4. Summary of match-worthy pairs
+# 3. Summary of match-worthy pairs
 summarize_matchworthy <- function(mc_data) {
   mc_data %>%
     summarise(
@@ -43,7 +35,7 @@ summarize_matchworthy <- function(mc_data) {
     )
 }
 
-# 5. T-tests for PartnerYes
+# 4. T-tests for PartnerYes
 run_partner_yes_ttests <- function(mc_data) {
   list(
     male = t.test(PartnerYesM ~ MissedConnection, data = mc_data),
@@ -51,7 +43,7 @@ run_partner_yes_ttests <- function(mc_data) {
   )
 }
 
-# 6. Logistic regression for missed connections
+# 5. Logistic regression for missed connections
 fit_missed_logit <- function(mc_data) {
   glm(
     MissedConnection ~ UnderestimateM + UnderestimateF,
@@ -60,7 +52,7 @@ fit_missed_logit <- function(mc_data) {
   )
 }
 
-# 7. Perfect-information world summary
+# 6. Perfect-information world summary
 summarize_perfect_info <- function(data_rq4) {
   data_rq4 %>%
     summarise(

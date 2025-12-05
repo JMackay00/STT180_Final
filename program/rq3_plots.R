@@ -1,4 +1,4 @@
-library(ggplot2)
+library(tidyverse)
 
 # 1. Histograms 
 plot_rq3_hist_like_male <- function(data) {
@@ -27,7 +27,7 @@ plot_rq3_hist_like_female <- function(data) {
 plot_rq3_resid_vs_fitted_male <- function(model) {
   df <- data.frame(
     fitted = fitted(model),
-    resid  = resid(model)
+    resid  = residuals(model)
   )
   
   ggplot(df, aes(x = fitted, y = resid)) +
@@ -44,7 +44,7 @@ plot_rq3_resid_vs_fitted_male <- function(model) {
 plot_rq3_resid_vs_fitted_female <- function(model) {
   df <- data.frame(
     fitted = fitted(model),
-    resid  = resid(model)
+    resid  = residuals(model)
   )
   
   ggplot(df, aes(x = fitted, y = resid)) +
@@ -60,7 +60,7 @@ plot_rq3_resid_vs_fitted_female <- function(model) {
 
 # 3. QQ plots
 plot_rq3_qq_resid_male <- function(model) {
-  df <- data.frame(resid = resid(model))
+  df <- data.frame(resid = residuals(model))
   
   ggplot(df, aes(sample = resid)) +
     stat_qq() +
@@ -74,7 +74,7 @@ plot_rq3_qq_resid_male <- function(model) {
 }
 
 plot_rq3_qq_resid_female <- function(model) {
-  df <- data.frame(resid = resid(model))
+  df <- data.frame(resid = residuals(model))
   
   ggplot(df, aes(sample = resid)) +
     stat_qq() +

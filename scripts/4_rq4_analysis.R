@@ -2,7 +2,7 @@ source("program/rq4_models.R")
 source("program/rq4_plots.R")
 
 # 1. Load and prepare data
-data     <- load_clean_data()
+data <- readRDS("data_clean/SpeedDatingClean.rds")
 data_rq4 <- add_rq4_variables(data)
 mc_data  <- get_matchworthy_data(data_rq4)
 

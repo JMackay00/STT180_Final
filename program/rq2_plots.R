@@ -1,4 +1,4 @@
-library(ggplot2)
+library(tidyverse)
 
 # 1. Predictor histograms
 plot_rq2_hist_predictors_male <- function(data) {

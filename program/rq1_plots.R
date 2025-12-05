@@ -1,4 +1,4 @@
-library(ggplot2)
+library(tidyverse)
 
 # 1. Histograms
 plot_rq1_hist_like_male <- function(data) {
@@ -116,8 +116,8 @@ plot_rq1_interaction_female <- function(data) {
   data <- data %>%
     mutate(
       SincereGroup = case_when(
-        SincereF <= quantile(SincereM, 0.33) ~ "Low Sincerity",
-        SincereF <= quantile(SincereM, 0.66) ~ "Medium Sincerity",
+        SincereF <= quantile(SincereF, 0.33) ~ "Low Sincerity",
+        SincereF <= quantile(SincereF, 0.66) ~ "Medium Sincerity",
         TRUE ~ "High Sincerity"
       )
     )
